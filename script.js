@@ -1,7 +1,6 @@
 const menuToggle = document.querySelector('#menu-toggle');
 const siteNav = document.querySelector('#site-nav');
 const contactForm = document.querySelector('#contact-form');
-const formStatus = document.querySelector('#form-status');
 
 menuToggle?.addEventListener('click', () => {
   const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
@@ -28,12 +27,6 @@ document.querySelectorAll('#site-nav a').forEach((link) => {
     siteNav?.classList.remove('absolute', 'flex', 'flex-col', 'rounded-2xl', 'border', 'border-paper/10', 'bg-[#1a1e1f]', 'p-6', 'left-6', 'right-6', 'top-20');
     document.body.classList.remove('menu-open');
   });
-});
-
-contactForm?.addEventListener('submit', (event) => {
-  event.preventDefault();
-  formStatus.textContent = 'Thanks! We will be in touch soon.';
-  contactForm.reset();
 });
 
 const observer = new IntersectionObserver((entries) => {
